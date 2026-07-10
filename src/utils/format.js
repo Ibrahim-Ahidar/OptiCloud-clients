@@ -2,7 +2,7 @@ export const formatCurrency = (amount, locale = 'fr') => {
   if (amount == null || Number.isNaN(Number(amount))) return '—';
   return new Intl.NumberFormat(locale, {
     style: 'currency',
-    currency: 'MAD',
+    currency: 'EUR',
     minimumFractionDigits: 2,
   }).format(Number(amount));
 };

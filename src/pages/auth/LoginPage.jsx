@@ -18,7 +18,7 @@ import LanguageSwitcher from '../../components/LanguageSwitcher.jsx';
 import { useAuth } from '../../context/AuthContext.jsx';
 
 const DEMO_ADMIN = {
-  email: 'admin@visionplus.ma',
+  email: 'admin@optivision.es',
   password: 'admin123',
 };
 

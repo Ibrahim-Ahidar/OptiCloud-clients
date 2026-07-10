@@ -29,7 +29,7 @@
     "all": "Tous",
     "from": "Du",
     "to": "Au",
-    "currency": "MAD",
+    "currency": "EUR",
     "optional": "optionnel",
     "today": "Aujourd'hui",
     "new": "Nouveau"
@@ -156,7 +156,7 @@
     "modele": "Modèle",
     "couleur": "Couleur",
     "genre": "Genre",
-    "prix": "Prix (MAD)",
+    "prix": "Prix (EUR)",
     "stock": "Stock",
     "marque": "Marque",
     "categorie": "Catégorie",

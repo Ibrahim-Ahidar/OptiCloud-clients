@@ -147,25 +147,25 @@ const DevisFormPage = () => {
                   <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth select label={t('nav.montures')} {...register('idmonture')}>
                       <MenuItem value="">—</MenuItem>
-                      {montures.map((m) => <MenuItem key={m.idmonture} value={m.idmonture}>{m.reference} — {m.modele} ({m.prix} MAD)</MenuItem>)}
+                      {montures.map((m) => <MenuItem key={m.idmonture} value={m.idmonture}>{m.reference} — {m.modele} ({m.prix} {t('common.currency')})</MenuItem>)}
                     </TextField>
                   </Grid>
                   <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth select label={`${t('nav.verres')} OD`} {...register('idverre_od')}>
                       <MenuItem value="">—</MenuItem>
-                      {verres.map((v) => <MenuItem key={v.idverre} value={v.idverre}>{v.nom} ({v.prix} MAD)</MenuItem>)}
+                      {verres.map((v) => <MenuItem key={v.idverre} value={v.idverre}>{v.nom} ({v.prix} {t('common.currency')})</MenuItem>)}
                     </TextField>
                   </Grid>
                   <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth select label={`${t('nav.verres')} OG`} {...register('idverre_og')}>
                       <MenuItem value="">—</MenuItem>
-                      {verres.map((v) => <MenuItem key={v.idverre} value={v.idverre}>{v.nom} ({v.prix} MAD)</MenuItem>)}
+                      {verres.map((v) => <MenuItem key={v.idverre} value={v.idverre}>{v.nom} ({v.prix} {t('common.currency')})</MenuItem>)}
                     </TextField>
                   </Grid>
                   <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth select label={t('nav.lentilles')} {...register('idlentille')}>
                       <MenuItem value="">—</MenuItem>
-                      {lentilles.map((l) => <MenuItem key={l.idlentille} value={l.idlentille}>{l.nom} ({l.prix} MAD)</MenuItem>)}
+                      {lentilles.map((l) => <MenuItem key={l.idlentille} value={l.idlentille}>{l.nom} ({l.prix} {t('common.currency')})</MenuItem>)}
                     </TextField>
                   </Grid>
                   <Grid size={{ xs: 12, sm: 6 }}><TextField fullWidth label={t('devis.rembSecu')} type="number" {...register('remboursement_secu')} /></Grid>

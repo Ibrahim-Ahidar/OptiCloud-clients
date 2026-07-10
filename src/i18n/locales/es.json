@@ -29,7 +29,7 @@
     "all": "Todos",
     "from": "Desde",
     "to": "Hasta",
-    "currency": "MAD",
+    "currency": "EUR",
     "optional": "opcional",
     "today": "Hoy",
     "new": "Nuevo"
@@ -156,7 +156,7 @@
     "modele": "Modelo",
     "couleur": "Color",
     "genre": "Género",
-    "prix": "Precio (MAD)",
+    "prix": "Precio (EUR)",
     "stock": "Stock",
     "marque": "Marca",
     "categorie": "Categoría",
