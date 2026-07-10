@@ -11,10 +11,16 @@ import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CircularProgress from '@mui/material/CircularProgress';
 import LanguageSwitcher from '../../components/LanguageSwitcher.jsx';
 import { useAuth } from '../../context/AuthContext.jsx';
+
+const DEMO_ADMIN = {
+  email: 'admin@visionplus.ma',
+  password: 'admin123',
+};
 
 const LoginPage = () => {
   const { t } = useTranslation();
@@ -26,7 +32,10 @@ const LoginPage = () => {
     password: z.string().min(1, t('auth.passwordRequired')),
   });
 
-  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) });
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: DEMO_ADMIN,
+  });
 
   if (loading) return null;
   if (isAuthenticated) return <Navigate to="/" replace />;
@@ -41,6 +50,11 @@ const LoginPage = () => {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const fillDemoAdmin = () => {
+    setValue('email', DEMO_ADMIN.email, { shouldValidate: true });
+    setValue('password', DEMO_ADMIN.password, { shouldValidate: true });
   };
 
   return (
@@ -71,9 +85,34 @@ const LoginPage = () => {
               <LanguageSwitcher />
             </Box>
             <Box mb={3}>
+              <Box display="flex" alignItems="center" gap={1.5} mb={1} sx={{ display: { xs: 'flex', md: 'none' } }}>
+                <VisibilityIcon color="primary" sx={{ fontSize: 32 }} />
+                <Typography variant="h6" fontWeight={700}>{t('common.appName')}</Typography>
+              </Box>
               <Typography variant="h5" fontWeight={700} gutterBottom>{t('auth.welcomeBack')}</Typography>
               <Typography color="text.secondary">{t('auth.signInSubtitle')}</Typography>
             </Box>
+
+            <Alert
+              severity="info"
+              icon={<VisibilityIcon fontSize="inherit" />}
+              sx={{ mb: 2, borderRadius: 2 }}
+            >
+              <Typography variant="subtitle2" fontWeight={700} gutterBottom>
+                {t('auth.demoAccountTitle')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" gutterBottom>
+                {t('auth.demoAccountHint')}
+              </Typography>
+              <Typography variant="body2" component="div" sx={{ fontFamily: 'monospace', mt: 1 }}>
+                {DEMO_ADMIN.email}
+                <br />
+                {DEMO_ADMIN.password}
+              </Typography>
+              <Button size="small" variant="outlined" onClick={fillDemoAdmin} sx={{ mt: 1.5 }}>
+                {t('auth.useDemoAccount')}
+              </Button>
+            </Alert>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <TextField

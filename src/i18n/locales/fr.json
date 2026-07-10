@@ -66,7 +66,10 @@
     "invalidEmail": "Email invalide",
     "passwordRequired": "Mot de passe requis",
     "welcomeBack": "Bon retour",
-    "signInSubtitle": "Connectez-vous à votre espace opticien"
+    "signInSubtitle": "Connectez-vous à votre espace opticien",
+    "demoAccountTitle": "Compte démo admin",
+    "demoAccountHint": "Identifiants pour tester l'application",
+    "useDemoAccount": "Utiliser le compte admin"
   },
   "roles": {
     "ADMIN": "Administrateur",

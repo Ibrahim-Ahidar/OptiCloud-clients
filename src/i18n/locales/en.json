@@ -66,7 +66,10 @@
     "invalidEmail": "Invalid email",
     "passwordRequired": "Password required",
     "welcomeBack": "Welcome back",
-    "signInSubtitle": "Sign in to your optical workspace"
+    "signInSubtitle": "Sign in to your optical workspace",
+    "demoAccountTitle": "Demo admin account",
+    "demoAccountHint": "Use these credentials to test the app",
+    "useDemoAccount": "Use admin demo account"
   },
   "roles": {
     "ADMIN": "Administrator",
