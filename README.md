@@ -10,7 +10,7 @@ React frontend for OptiCloud — optical clinic management system.
 
 | Variable | Value |
 |----------|-------|
-| `VITE_API_URL` | `https://your-api.onrender.com/api` |
+| `VITE_API_URL` | `https://opticloud-server-wh26.onrender.com/api` |
 
 4. Deploy
 
@@ -22,7 +22,10 @@ npm install
 npm run dev
 ```
 
-App runs at `http://localhost:5175` (proxies `/api` to `http://localhost:5000`).
+App runs at `http://localhost:5175`.
+
+- **Local API:** uses `.env.development` — proxies `/api` to `http://localhost:5000`
+- **Render API:** uses `.env` — calls `https://opticloud-server-wh26.onrender.com/api` directly
 
 ## Related repos
 
