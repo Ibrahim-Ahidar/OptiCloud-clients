@@ -8,7 +8,7 @@ const del = (url) => api.delete(url).then((r) => r.data);
 export const authApi = {
   login: (data) => post('/auth/login', data),
   logout: () => post('/auth/logout'),
-  profile: () => get('/auth/profile'),
+  profile: (config) => api.get('/auth/profile', config).then((r) => r.data),
 };
 
 export const dashboardApi = {

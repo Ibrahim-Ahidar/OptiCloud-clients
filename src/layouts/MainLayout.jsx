@@ -4,9 +4,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Sidebar, { DRAWER_WIDTH } from './Sidebar.jsx';
 import Navbar from './Navbar.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 
 const MainLayout = memo(() => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { status } = useAuth();
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
@@ -23,7 +25,7 @@ const MainLayout = memo(() => {
         }}
       >
         <Toolbar />
-        <Outlet />
+        {status === 'loading' ? null : <Outlet />}
       </Box>
     </Box>
   );

@@ -49,13 +49,15 @@ const Navbar = memo(({ onMenuClick, drawerWidth }) => {
           {mode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
         </IconButton>
 
-        <Chip
-          label={t(`roles.${user?.role}`, user?.role)}
-          size="small"
-          color="primary"
-          variant="outlined"
-          sx={{ mr: 2 }}
-        />
+        {user?.role && (
+          <Chip
+            label={t(`roles.${user.role}`, user.role)}
+            size="small"
+            color="primary"
+            variant="outlined"
+            sx={{ mr: 2 }}
+          />
+        )}
 
         <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
           <Avatar sx={{ width: 36, height: 36, bgcolor: 'primary.main', fontSize: 14 }}>

@@ -11,7 +11,16 @@ export default [
       ecmaVersion: 2022,
       sourceType: 'module',
       parserOptions: { ecmaFeatures: { jsx: true } },
-      globals: { window: 'readonly', document: 'readonly', console: 'readonly', localStorage: 'readonly' },
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        console: 'readonly',
+        localStorage: 'readonly',
+        fetch: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        AbortController: 'readonly',
+      },
     },
     settings: { react: { version: 'detect' } },
     rules: {

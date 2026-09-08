@@ -71,6 +71,14 @@
     "demoAccountHint": "Credenciales para probar la aplicación",
     "useDemoAccount": "Usar cuenta admin demo"
   },
+  "busy": {
+    "signingIn": "Iniciando sesión…",
+    "creatingAccount": "Creando tu cuenta…",
+    "verifying": "Verificando…",
+    "sendingCode": "Enviando tu código…",
+    "openingWorkspace": "Abriendo tu espacio…",
+    "wakingServer": "El servidor se está iniciando. Puede tardar un momento."
+  },
   "roles": {
     "ADMIN": "Administrador",
     "OPTICIEN": "Óptico",

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -24,8 +24,11 @@ const DEMO_ADMIN = {
 
 const LoginPage = () => {
   const { t } = useTranslation();
-  const { login, isAuthenticated, loading } = useAuth();
+  const location = useLocation();
+  const { login, isAuthenticated } = useAuth();
   const [submitting, setSubmitting] = useState(false);
+  const fromPath = location.state?.from?.pathname;
+  const redirectTo = fromPath && fromPath !== '/login' ? fromPath : '/';
 
   const schema = z.object({
     email: z.string().email(t('auth.invalidEmail')),
@@ -37,8 +40,7 @@ const LoginPage = () => {
     defaultValues: DEMO_ADMIN,
   });
 
-  if (loading) return null;
-  if (isAuthenticated) return <Navigate to="/" replace />;
+  if (isAuthenticated) return <Navigate to={redirectTo} replace />;
 
   const onSubmit = async (data) => {
     setSubmitting(true);
@@ -114,7 +116,7 @@ const LoginPage = () => {
               </Button>
             </Alert>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} data-testid="login-form">
               <TextField
                 fullWidth label={t('auth.email')} margin="normal"
                 {...register('email')} error={!!errors.email} helperText={errors.email?.message}
@@ -125,7 +127,7 @@ const LoginPage = () => {
               />
               <Button
                 fullWidth type="submit" variant="contained" size="large" sx={{ mt: 3, py: 1.5 }}
-                disabled={submitting || loading}
+                disabled={submitting}
               >
                 {submitting ? <CircularProgress size={24} color="inherit" /> : t('auth.login')}
               </Button>

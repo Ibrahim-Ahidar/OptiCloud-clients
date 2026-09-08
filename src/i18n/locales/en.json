@@ -71,6 +71,14 @@
     "demoAccountHint": "Use these credentials to test the app",
     "useDemoAccount": "Use admin demo account"
   },
+  "busy": {
+    "signingIn": "Signing you in…",
+    "creatingAccount": "Creating your account…",
+    "verifying": "Verifying…",
+    "sendingCode": "Sending your code…",
+    "openingWorkspace": "Opening your workspace…",
+    "wakingServer": "The server is waking up. This can take a moment."
+  },
   "roles": {
     "ADMIN": "Administrator",
     "OPTICIEN": "Optician",
